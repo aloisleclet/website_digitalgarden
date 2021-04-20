@@ -37,7 +37,7 @@ fetch("./json/posts.json")
 	  const distance = window.scrollY;
 	
 	  const height = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-	
+//here	
 	  document.querySelector("#tags_left").style.left = -height + distance * 0.05+'px';
 	  document.querySelector("#tags_right").style.left = -height - distance * 0.05+'px';
 	
@@ -55,9 +55,6 @@ fetch("./json/posts.json")
 		  	createPost();
 		  }
 
-      //make the banners longer
-	    document.querySelector("#tags_left").innerHTML += '@aloisleclet #breakdance #dev #fullstack #digitalart #movement #animalmovement #opensource #digitalgarden @aloisleclet #breakdance #dev #fullstack #digitalart #movement #animalmovement #opensource #digitalgarden';
-	    document.querySelector("#tags_right").innerHTML += '@aloisleclet #breakdance #dev #fullstack #digitalart #movement #animalmovement #opensource #digitalgarden @aloisleclet #breakdance #dev #fullstack #digitalart #movement #animalmovement #opensource #digitalgarden';
 	  }
 	
 	});
