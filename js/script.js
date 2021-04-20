@@ -41,7 +41,6 @@ fetch("./json/posts.json")
 	window.addEventListener("scroll", function()
 	{
 	  const distance = window.scrollY;
-<<<<<<< HEAD
 	
     if (distance > lastPos && distance - lastPos > 14)//scroll down
     {
@@ -61,7 +60,6 @@ fetch("./json/posts.json")
     document.querySelector('#tags_right').innerHTML = bannerStr;
 	
     lastPos = distance;
->>>>>>> ff02fa55bd04f16462abf891814ef06bab00063a
 	});
 	
 	//infinite scroll
@@ -106,9 +104,7 @@ fetch("./json/posts.json")
 
 	  document.querySelector('.wrap').appendChild(post);
 
-    setTimeout(function() {
-      post.classList.add('active');
-    }, 1000);
+    post.classList.add('active');
 	  current ++;
 	};
 
