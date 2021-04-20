@@ -1,13 +1,12 @@
 //fetch posts
-
-
 fetch("./json/posts.json")
   .then(response => response.json())
   .then(json => {
-	let current = 0;
+	
+  let current = 0;
 
 
-	//create 10 post	
+	//create 10 first posts
 	for(let i = 0; i < 10 && current < json.posts.length; i++)
 	{
 		createPost();
@@ -51,10 +50,14 @@ fetch("./json/posts.json")
 	  
 	  if (scrollTop + clientHeight > scrollHeight - 5)
 	  {
-		for(let i = 0; i < 10 && current < json.posts.length; i++)
-		{
-			createPost();
-		}
+		  for(let i = 0; i < 10 && current < json.posts.length; i++)
+		  {
+		  	createPost();
+		  }
+
+      //make the banners longer
+	    document.querySelector("#tags_left").innerHTML += '@aloisleclet #breakdance #dev #fullstack #digitalart #movement #animalmovement #opensource #digitalgarden @aloisleclet #breakdance #dev #fullstack #digitalart #movement #animalmovement #opensource #digitalgarden';
+	    document.querySelector("#tags_right").innerHTML += '@aloisleclet #breakdance #dev #fullstack #digitalart #movement #animalmovement #opensource #digitalgarden @aloisleclet #breakdance #dev #fullstack #digitalart #movement #animalmovement #opensource #digitalgarden';
 	  }
 	
 	});
@@ -82,8 +85,12 @@ fetch("./json/posts.json")
 	
 	  post.appendChild(img);
 	  post.appendChild(text);
-	
+
 	  document.querySelector('.wrap').appendChild(post);
+
+    setTimeout(function() {
+      post.classList.add('active');
+    }, 600);
 	  current ++;
 	};
 
