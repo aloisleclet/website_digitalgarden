@@ -153,6 +153,15 @@ body {
       transition: opacity ease 0.6s; }
       body .wrap .post.active {
         opacity: 1; }
+      body .wrap .post:nth-child(1) {
+        transition-delay: 0.6s;
+        background-color: red; }
+      body .wrap .post:nth-child(2) {
+        transition-delay: 1.2s; }
+      body .wrap .post:nth-child(3) {
+        transition-delay: 1.8s; }
+      body .wrap .post:nth-child(4) {
+        transition-delay: 2.4s; }
       @media (max-width: 760px) {
         body .wrap .post {
           width: calc(100vw - 8.5rem); } }
