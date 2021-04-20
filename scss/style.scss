@@ -1,0 +1,419 @@
+$black: #212529;
+$gray: #f3f9fa;
+$white: #f7ffff;
+
+
+$yellow:#ffbe0b;
+$orange:#fb5607;
+$red:#ff006e;
+$violet:#8338ec;
+$blue:#3a86ff;
+
+$primary: $red;
+
+$font:helvetica;
+
+html
+{
+  scrollbar-color: transparent transparent;
+}
+
+body
+{
+  width:100vw;
+  max-width:100%;
+
+  position:absolute;
+  top:0;
+  left:0;
+
+  margin:0;
+  padding:0; 
+
+  background-color:$white;
+
+  transition:all ease 0.6s;
+
+  &.darkmode
+  {
+    background-color:invert($white);
+
+    .wrap, .info
+    {
+      filter: invert(1) hue-rotate(180deg);
+
+      img, .bubble
+      {
+        filter: invert(1) hue-rotate(180deg);
+      }
+      
+    }
+  }
+
+  a, a:visited
+  {
+    color:$primary;
+    
+    &:hover
+    {
+      background-color:$primary;
+      color:$white; 
+    }
+
+    &:active
+    {
+    
+    }
+    
+    &::selection
+    {
+      background-color:$black;
+      color:$gray; 
+    }
+  }
+
+  .info
+  {
+    width:400vh;
+    height:1.9rem;
+    position:fixed;
+
+    transform: rotate(90deg);
+	  transform-origin: left top 0;
+
+    top:0;
+    left:1.8rem;
+
+    background-color:$gray;
+    display:inline;
+
+    overflow:hidden;
+
+    word-break:word-space;
+
+    line-height:0.1rem;
+
+    font-size:0.8rem;
+
+    p
+    {
+      position:absolute;
+      top:0;
+      left:0; 
+      transition:all linear 0.1s;
+      user-select:none;
+    }
+
+    &.right
+    {
+      left:99vw; 
+    }
+  }
+
+  .bubbles
+  {
+    width:3rem;
+    position:fixed;
+    z-index:3;
+    top:3rem;
+    left:3rem;
+
+
+    .bubble
+    {
+      width:1rem;
+      height:1rem;
+      float:left;
+
+      margin:0.15rem;
+
+      border-radius:2rem;
+     
+      overflow:hidden;
+
+
+      &:hover
+      {
+        cursor:pointer;
+
+        .label
+        {
+          top:5vh;
+          width:100vw;
+          font-size:30vw;
+          opacity:0.3;
+          top:50vh; 
+          transform-origin: center center;
+          transform: rotate(30deg);
+
+
+          @media screen and (orientation: portrait)
+          {
+            font-size:30vh;
+            top:50vh;
+            width:100vh;
+          }
+     
+        }
+      }
+
+      &:nth-child(1)
+      {
+        background-color: $yellow;
+        
+        .label
+        {
+          color: $yellow;
+        }
+      }
+      
+      &:nth-child(2)
+      {
+        background-color: $red;
+        .label
+        {
+          color: $red;
+        }
+      }
+      
+      &:nth-child(3)
+      {
+        background-color: $violet;
+        .label
+        {
+          color: $violet;
+        }
+      }
+      
+      &:nth-child(4)
+      {
+        background-color: $blue;
+        .label
+        {
+          color: $blue;
+        }
+      }
+
+    }
+
+   .label
+   {
+      position:fixed;
+      top:-100vh;
+      left:0;
+      width:0;
+      z-index:-1;
+      overflow:hidden;
+      font-weight:bolder;
+      opacity:0;
+      transition:all ease 0.6s;
+      font-family:$font;
+      
+      transition-delay:0.3s;
+
+   }
+
+  }
+
+  .window
+  {
+    width:100vw;
+    height:100vh; 
+
+    padding:1rem;
+    padding-left:4rem;
+    padding-top:2.7rem;
+    position:fixed;
+    z-index:3;
+    top: 0;
+    left:100vw;
+    background-color:$blue;
+
+    display:flex;
+    align-items:flex-start;
+    flex-direction:column;
+
+    transition:all ease 0.6s;
+
+    overflow-y:auto;
+
+    &.active
+    {
+      left:2rem; 
+    }
+
+    a
+    {
+      color:$white; 
+      font-family:$font;
+      font-size:1.5rem;
+      margin:0.5rem;
+      padding:0.5rem;
+      display:inline;
+      position:relative;
+      z-index:4;
+    } 
+  }
+
+  .wrap
+  {
+    max-width:80%; 
+    width:80vw;
+    z-index:1;
+    margin:10vw;
+
+    display:flex;
+    flex-direction:column; 
+
+    .post
+    {
+      width:70%;
+      min-height:500px;//replace by picture format 
+
+      position:relative;
+      display:block;
+      overflow:hidden;//?
+
+      margin:2rem auto;
+
+      
+      @media (max-width:760px)
+      {
+        width:calc(100vw - 8.5rem); 
+      }
+
+      img
+      {
+        position:absolute;
+        width:60%;
+        top:0;
+        left:0;
+        user-select:none;
+       
+        @media (max-width:480px)
+        {
+          width:100%; 
+        }
+      }
+
+      .text
+      {
+
+        position:relative;
+        padding-top:10%;
+        padding-left: 50%;
+        max-width:50%;
+        
+        transition: all ease 0.6s;
+        
+        @media (max-width:480px)
+        {
+          width:100%;
+          max-width:92%;
+          padding-top:100%;
+          padding-left:5%;
+        }
+
+      } 
+      
+      p
+      {
+        line-height:1.5rem;
+        display:inline;
+        font-size:1rem;
+       
+        background-color:$gray;
+        color:$black;
+        
+        padding:0.3rem;
+        font-family:$font;
+        box-decoration-break: clone;
+        
+        b
+        {
+          font-weight:normal;
+          text-decoration:underline;
+        }
+
+        &::selection
+        {
+          background-color:$primary;
+          color:$gray; 
+        }
+      }
+
+      &:nth-child(odd)
+      {
+
+        img
+        {
+          left:auto;
+          right:0;
+        }
+
+        .text
+        {
+          position:relative;
+          padding-top:10%;
+          padding-right: 40%;
+          padding-left:0;
+          max-width:50%;
+         
+          @media (max-width:480px)
+          {
+            width:100%;
+            max-width:92%;
+            padding-top:100%;
+            padding-left:5%;
+          }
+          transition: all ease 0.6s;
+        }
+      }
+
+      &.text-only
+      {
+        min-height:0px;
+        @media (max-width:480px)
+        {
+          width:auto;
+          margin-left:0px;
+          margin-right:0px; 
+        }
+
+        .text
+        {
+          padding-top:0px;
+          position:relative;
+          float:left;
+          @media (max-width:480px)
+          {
+            padding:0;
+            margin:0; 
+          }
+        }
+
+        &:nth-child(odd) 
+        {
+          .text
+          {
+            float:right;
+
+            @media (max-width:480px)
+            {
+              text-align:right;
+            }
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  footer
+  {
+    text-align:center; 
+  }
+
+}

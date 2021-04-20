@@ -1,0 +1,223 @@
+html {
+  scrollbar-color: transparent transparent; }
+
+body {
+  width: 100vw;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #f7ffff;
+  transition: all ease 0.6s; }
+  body.darkmode {
+    background-color: #080000; }
+    body.darkmode .wrap, body.darkmode .info {
+      filter: invert(1) hue-rotate(180deg); }
+      body.darkmode .wrap img, body.darkmode .wrap .bubble, body.darkmode .info img, body.darkmode .info .bubble {
+        filter: invert(1) hue-rotate(180deg); }
+  body a, body a:visited {
+    color: #ff006e; }
+    body a:hover, body a:visited:hover {
+      background-color: #ff006e;
+      color: #f7ffff; }
+    body a::selection, body a:visited::selection {
+      background-color: #212529;
+      color: #f3f9fa; }
+  body .info {
+    width: 400vh;
+    height: 1.9rem;
+    position: fixed;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    top: 0;
+    left: 1.8rem;
+    background-color: #f3f9fa;
+    display: inline;
+    overflow: hidden;
+    word-break: word-space;
+    line-height: 0.1rem;
+    font-size: 0.8rem; }
+    body .info p {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all linear 0.1s;
+      user-select: none; }
+    body .info.right {
+      left: 99vw; }
+  body .bubbles {
+    width: 3rem;
+    position: fixed;
+    z-index: 3;
+    top: 3rem;
+    left: 3rem; }
+    body .bubbles .bubble {
+      width: 1rem;
+      height: 1rem;
+      float: left;
+      margin: 0.15rem;
+      border-radius: 2rem;
+      overflow: hidden; }
+      body .bubbles .bubble:hover {
+        cursor: pointer; }
+        body .bubbles .bubble:hover .label {
+          top: 5vh;
+          width: 100vw;
+          font-size: 30vw;
+          opacity: 0.3;
+          top: 50vh;
+          transform-origin: center center;
+          transform: rotate(30deg); }
+          @media screen and (orientation: portrait) {
+            body .bubbles .bubble:hover .label {
+              font-size: 30vh;
+              top: 50vh;
+              width: 100vh; } }
+      body .bubbles .bubble:nth-child(1) {
+        background-color: #ffbe0b; }
+        body .bubbles .bubble:nth-child(1) .label {
+          color: #ffbe0b; }
+      body .bubbles .bubble:nth-child(2) {
+        background-color: #ff006e; }
+        body .bubbles .bubble:nth-child(2) .label {
+          color: #ff006e; }
+      body .bubbles .bubble:nth-child(3) {
+        background-color: #8338ec; }
+        body .bubbles .bubble:nth-child(3) .label {
+          color: #8338ec; }
+      body .bubbles .bubble:nth-child(4) {
+        background-color: #3a86ff; }
+        body .bubbles .bubble:nth-child(4) .label {
+          color: #3a86ff; }
+    body .bubbles .label {
+      position: fixed;
+      top: -100vh;
+      left: 0;
+      width: 0;
+      z-index: -1;
+      overflow: hidden;
+      font-weight: bolder;
+      opacity: 0;
+      transition: all ease 0.6s;
+      font-family: helvetica;
+      transition-delay: 0.3s; }
+  body .window {
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    padding-left: 4rem;
+    padding-top: 2.7rem;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 100vw;
+    background-color: #3a86ff;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    transition: all ease 0.6s;
+    overflow-y: auto; }
+    body .window.active {
+      left: 2rem; }
+    body .window a {
+      color: #f7ffff;
+      font-family: helvetica;
+      font-size: 1.5rem;
+      margin: 0.5rem;
+      padding: 0.5rem;
+      display: inline;
+      position: relative;
+      z-index: 4; }
+  body .wrap {
+    max-width: 80%;
+    width: 80vw;
+    z-index: 1;
+    margin: 10vw;
+    display: flex;
+    flex-direction: column; }
+    body .wrap .post {
+      width: 70%;
+      min-height: 500px;
+      position: relative;
+      display: block;
+      overflow: hidden;
+      margin: 2rem auto; }
+      @media (max-width: 760px) {
+        body .wrap .post {
+          width: calc(100vw - 8.5rem); } }
+      body .wrap .post img {
+        position: absolute;
+        width: 60%;
+        top: 0;
+        left: 0;
+        user-select: none; }
+        @media (max-width: 480px) {
+          body .wrap .post img {
+            width: 100%; } }
+      body .wrap .post .text {
+        position: relative;
+        padding-top: 10%;
+        padding-left: 50%;
+        max-width: 50%;
+        transition: all ease 0.6s; }
+        @media (max-width: 480px) {
+          body .wrap .post .text {
+            width: 100%;
+            max-width: 92%;
+            padding-top: 100%;
+            padding-left: 5%; } }
+      body .wrap .post p {
+        line-height: 1.5rem;
+        display: inline;
+        font-size: 1rem;
+        background-color: #f3f9fa;
+        color: #212529;
+        padding: 0.3rem;
+        font-family: helvetica;
+        box-decoration-break: clone; }
+        body .wrap .post p b {
+          font-weight: normal;
+          text-decoration: underline; }
+        body .wrap .post p::selection {
+          background-color: #ff006e;
+          color: #f3f9fa; }
+      body .wrap .post:nth-child(odd) img {
+        left: auto;
+        right: 0; }
+      body .wrap .post:nth-child(odd) .text {
+        position: relative;
+        padding-top: 10%;
+        padding-right: 40%;
+        padding-left: 0;
+        max-width: 50%;
+        transition: all ease 0.6s; }
+        @media (max-width: 480px) {
+          body .wrap .post:nth-child(odd) .text {
+            width: 100%;
+            max-width: 92%;
+            padding-top: 100%;
+            padding-left: 5%; } }
+      body .wrap .post.text-only {
+        min-height: 0px; }
+        @media (max-width: 480px) {
+          body .wrap .post.text-only {
+            width: auto;
+            margin-left: 0px;
+            margin-right: 0px; } }
+        body .wrap .post.text-only .text {
+          padding-top: 0px;
+          position: relative;
+          float: left; }
+          @media (max-width: 480px) {
+            body .wrap .post.text-only .text {
+              padding: 0;
+              margin: 0; } }
+        body .wrap .post.text-only:nth-child(odd) .text {
+          float: right; }
+          @media (max-width: 480px) {
+            body .wrap .post.text-only:nth-child(odd) .text {
+              text-align: right; } }
+  body footer {
+    text-align: center; }
