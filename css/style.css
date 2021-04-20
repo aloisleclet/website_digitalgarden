@@ -26,13 +26,13 @@ body {
       background-color: #212529;
       color: #f3f9fa; }
   body .info {
-    width: 400vh;
+    width: 100vh;
     height: 1.9rem;
     position: fixed;
-    transform: rotate(90deg);
+    transform: rotate(270deg);
     transform-origin: left top 0;
-    top: 0;
-    left: 1.8rem;
+    bottom: -1.8rem;
+    left: 0;
     background-color: #f3f9fa;
     display: inline;
     overflow: hidden;
@@ -40,12 +40,17 @@ body {
     line-height: 0.1rem;
     font-size: 0.8rem; }
     body .info p {
+      width: 100000vh;
       position: absolute;
+      display: inline-block;
       top: 0;
       left: 0;
       transition: all linear 0.1s;
       user-select: none; }
     body .info.right {
+      transform: rotate(90deg);
+      top: 0;
+      bottom: auto;
       left: 99vw; }
   body .bubbles {
     width: 3rem;

@@ -5,7 +5,6 @@ fetch("./json/posts.json")
 	
   let current = 0;
 
-
 	//create 10 first posts
 	for(let i = 0; i < 10 && current < json.posts.length; i++)
 	{
@@ -30,17 +29,39 @@ fetch("./json/posts.json")
 	
 	
 	};
-	
+
 	//scroll effect
+  let lastPos = 0;
+  
+  let tags = '@aloisleclet #breakdance #dev #fullstack #digitalart #movement #animalmovement #opensource #digitalgarden '.split("").reverse().join("");
+  let i = 0;
+  
+  let bannerStr = tags;
+
 	window.addEventListener("scroll", function()
 	{
 	  const distance = window.scrollY;
+<<<<<<< HEAD
 	
-	  const height = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-//here	
-	  document.querySelector("#tags_left").style.left = -height + distance * 0.05+'px';
-	  document.querySelector("#tags_right").style.left = -height - distance * 0.05+'px';
+    if (distance > lastPos && distance - lastPos > 14)//scroll down
+    {
+      bannerStr = tags[i] + document.querySelector('#tags_left').innerHTML.slice(0, -1);
+     
+      i = i == tags.length - 1 ? 0 : i + 1;
+    }
+    else if (distance < lastPos && lastPos - distance > 14)//scroll up
+    {
+      bannerStr = document.querySelector('#tags_left').innerHTML.slice(1, bannerStr.length) + tags[i];
+
+      i = i == 0 ? tags.length - 1 : i - 1;
+    }
+    
+    //update dom
+    document.querySelector('#tags_left').innerHTML = bannerStr;
+    document.querySelector('#tags_right').innerHTML = bannerStr;
 	
+    lastPos = distance;
+>>>>>>> ff02fa55bd04f16462abf891814ef06bab00063a
 	});
 	
 	//infinite scroll
@@ -87,7 +108,7 @@ fetch("./json/posts.json")
 
     setTimeout(function() {
       post.classList.add('active');
-    }, 600);
+    }, 1000);
 	  current ++;
 	};
 
