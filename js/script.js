@@ -3,9 +3,8 @@
 
 let {json, current} = fetch("./json/posts.json")
   .then(response => response.json())
-  .then(json => {
-    j.post.length;
-    return {'json': j, 'length': j.length};
+  .then(j => {
+    return {'json': j, 'length': j.posts.length};
   });
 
 
