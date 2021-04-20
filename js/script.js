@@ -96,7 +96,6 @@ fetch("./json/posts.json")
 	  let p = document.createElement('p');
 	  p.innerHTML += json.posts[current].text;
 
-	
 	  text.appendChild(p);
 	
 	  post.appendChild(img);
@@ -104,7 +103,9 @@ fetch("./json/posts.json")
 
 	  document.querySelector('.wrap').appendChild(post);
 
-    post.classList.add('active');
+    setTimeout(function () {
+      post.classList.add('active');
+    }, 800);
 	  current ++;
 	};
 
