@@ -1,6 +1,38 @@
 {
   "posts": [
     {
+      "img": "",
+      "text": "Hey ! this is my digital garden a little place where i put some idea, notes, and mood. No ambition here only the joy of sharing with no constraint, that's my garden."
+    },
+    {
+      "img": "",
+      "text": "The sun is rising today"
+    },
+    {
+      "img": "",
+      "text": "Birds are flying.."
+    },
+    {
+      "img": "",
+      "text": "Just coding."
+    },
+    {
+      "img": "",
+      "text": ":)"
+    },
+    {
+      "img": "",
+      "text": "smart enough to do some shits."
+    },
+    {
+      "img": "",
+      "text": "smart enough to do some shits."
+    },
+    {
+      "img": "",
+      "text": "smart enough to do some shits."
+    },
+    {
       "img": "https://www.doozylist.com/wp-content/uploads/2017/08/Nature-Photography-Inspiration-15.jpeg",
       "text": "smart enough to do some shits."
     },
@@ -31,6 +63,10 @@
     {
       "img": "https://www.pcclean.io/wp-content/uploads/2020/4/maQzui.jpg",
       "text": ""
+    },
+    {
+      "img": "",
+      "text": "Note − While the first function is better suited for node environment, the second function only works in the web environment because the fetch API is only accessible in the web environment."
     },
     {
       "img": "",
