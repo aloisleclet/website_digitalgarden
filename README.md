@@ -11,44 +11,26 @@ chmod +x ./install
 ./install
 ```
 
-```bash
-ssh username ?
-ssh server ?
-server garden directory ?
-client garden directory ? (/home/dev/.local/garden-client)
-add garden-client to your path 
-you could edit back this config on /home/dev/.local/garden-client/garden.config
-```
-
 ## How to use
 
 1. Post
 
 ```bash
-garden
+garden post
 ```
 
-```bash
-text > type here your text
-image > /path/to/image
+2. Reset
 
-your post is online !
-
-here a link to your post:
-
-https://garden.aloisleclet.fr#2 
-```
-
-2. Remove last post
+drop all posts
 
 ```bash
-garden --remove-last
+garden reset 
 ```
 
 3. Show all posts
 
 ```
-garden --history
+garden history
 ```
 
 code with <3
