@@ -72,7 +72,7 @@ if [ -e "$HOME/.config/garden/garden.config" ]; then
         echo "[garden] reset posts"
         echo "" > $garden_client_path/garden/posts.json
         echo -e '{"posts": [\n' >> $garden_client_path/garden/posts.json
-        echo -e '\t{"img":"", "text": "initial post"}\n' >> $garden_client_path/garden/posts.json
+        echo -e '\t,{"img": "", "text": ""}' >> $garden_client_path/garden/posts.json
         echo -e ']}\n' >> $garden_client_path/garden/posts.json
 
         scp $garden_client_path/garden/posts.json $username@$server:$garden_server_path"website_digitalgarden/json/posts.json"
